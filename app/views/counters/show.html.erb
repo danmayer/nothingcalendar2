@@ -1,0 +1,27 @@
+<p>
+  <b>Name:</b>
+  <%= @counter.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @counter.description %>
+</p>
+
+<p>
+  <b>Count:</b>
+  <%= @counter.count %>
+</p>
+
+<%= simple_form_for(@counter) do |f| %>
+   <%= f.hidden_field :increment, :value => true %>
+   <%= f.button :submit, "increase" %>
+<% end %>
+
+<%= simple_form_for(@counter) do |f| %>
+   <%= f.hidden_field :decrement, :value => true %>
+   <%= f.button :submit, "decrease" %>
+<% end %>
+
+<%= link_to 'Edit', edit_counter_path(@counter) %> |
+<%= link_to 'Back', counters_path %>
