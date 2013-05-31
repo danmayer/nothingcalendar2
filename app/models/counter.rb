@@ -19,7 +19,7 @@ class Counter < ActiveRecord::Base
   protected
 
   def counter_key
-    "counters:counter_#{id}"
+    "#{Rails.env}:counters:counter_#{id}"
   end
 
 end

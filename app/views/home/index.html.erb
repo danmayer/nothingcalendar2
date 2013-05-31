@@ -1,8 +1,10 @@
 <h3>Home</h3>
 
-counter
+counters
 
 <hr/>
-<% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
-<% end %>
+<ul>
+  <% @counters.each do |counter| %>
+    <li><%=link_to counter.name, counter %>  count: <%= counter.count %></li>
+  <% end %>
+</ul>

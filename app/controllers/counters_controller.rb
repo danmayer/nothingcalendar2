@@ -41,6 +41,7 @@ class CountersController < ApplicationController
   # POST /counters.json
   def create
     @counter = Counter.new(params[:counter])
+    @counter.user_id = current_user.id
 
     respond_to do |format|
       if @counter.save
